@@ -1,6 +1,5 @@
 import Link from "next/link";
 import { ArrowRight, Check, CheckCircle2, Quote } from "lucide-react";
-import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { ProductVisual } from "@/components/product-visual";
@@ -25,7 +24,11 @@ function SectionShell({
   children: React.ReactNode;
   className?: string;
 }) {
-  return <section className={`px-5 py-20 sm:px-6 lg:px-8 ${className}`}>{children}</section>;
+  return (
+    <section className={`px-5 py-24 sm:px-6 lg:px-8 ${className}`}>
+      {children}
+    </section>
+  );
 }
 
 function SectionIntro({
@@ -40,10 +43,18 @@ function SectionIntro({
   return (
     <div className="mx-auto max-w-3xl text-center">
       {eyebrow ? (
-        <p className="mb-4 text-sm font-medium uppercase tracking-[0.18em] text-emerald-300">{eyebrow}</p>
+        <p className="mb-4 text-xs font-medium uppercase tracking-[0.22em] text-emerald-300/80">
+          {eyebrow}
+        </p>
       ) : null}
-      <h2 className="text-balance text-3xl font-semibold tracking-normal text-white sm:text-4xl">{title}</h2>
-      {body ? <p className="mt-4 text-pretty text-base leading-7 text-white/62">{body}</p> : null}
+      <h2 className="text-balance text-3xl font-semibold tracking-normal text-white sm:text-5xl">
+        {title}
+      </h2>
+      {body ? (
+        <p className="mt-5 text-pretty text-base leading-7 text-white/60">
+          {body}
+        </p>
+      ) : null}
     </div>
   );
 }
@@ -56,10 +67,18 @@ function CtaButtons({ links }: { links?: CtaLink[] }) {
   return (
     <div className="flex flex-wrap gap-3">
       {links.map((link) => {
-        const variant = link.variant === "secondary" || link.variant === "ghost" ? "outline" : "default";
+        const variant =
+          link.variant === "secondary" || link.variant === "ghost"
+            ? "outline"
+            : "default";
 
         return (
-          <Button key={`${link.href}-${link.label}`} asChild variant={variant} className="rounded-md">
+          <Button
+            key={`${link.href}-${link.label}`}
+            asChild
+            variant={variant}
+            className="rounded-md"
+          >
             <Link href={link.href}>
               {link.label}
               <ArrowRight className="size-4" aria-hidden="true" />
@@ -73,25 +92,26 @@ function CtaButtons({ links }: { links?: CtaLink[] }) {
 
 function Hero({ section }: { section: HeroSection }) {
   return (
-    <section className="px-5 pb-16 pt-14 sm:px-6 lg:px-8">
-      <div className="mx-auto grid max-w-7xl items-center gap-12 lg:grid-cols-[0.9fr_1.1fr]">
-        <div>
-          {section.eyebrow ? (
-            <Badge className="mb-5 rounded-md border-emerald-300/30 bg-emerald-300/12 text-emerald-100">
-              {section.eyebrow}
-            </Badge>
-          ) : null}
-          <h1 className="text-balance text-5xl font-semibold tracking-normal text-white sm:text-6xl lg:text-7xl">
+    <section className="px-5 pb-16 pt-14 sm:px-6 lg:px-8 lg:pb-14 lg:pt-10">
+      <div className="mx-auto grid max-w-7xl items-center gap-10 lg:min-h-[760px] lg:grid-cols-[0.72fr_1.28fr]">
+        <div className="relative z-10">
+          <h1 className="max-w-[10ch] text-balance text-5xl font-semibold leading-[0.94] tracking-normal text-white sm:text-6xl lg:text-[5.75rem]">
             {section.title}
           </h1>
-          <p className="mt-6 max-w-2xl text-pretty text-lg leading-8 text-white/68">{section.body}</p>
-          <div className="mt-8">
+          <p className="mt-6 max-w-xl text-pretty text-lg leading-8 text-white/62">
+            {section.body}
+          </p>
+          <div className="mt-9">
             <CtaButtons links={section.links} />
           </div>
           {section.metricValue ? (
-            <div className="mt-10 flex w-fit items-end gap-4 rounded-lg border border-white/10 bg-white/[0.04] px-5 py-4">
-              <div className="font-mono text-3xl text-emerald-300">{section.metricValue}</div>
-              <div className="max-w-36 pb-1 text-sm leading-5 text-white/58">{section.metricLabel}</div>
+            <div className="mt-12 flex max-w-md items-center gap-5 border-l border-emerald-300/55 pl-5">
+              <div className="font-mono text-3xl tracking-normal text-emerald-300 sm:text-4xl">
+                {section.metricValue}
+              </div>
+              <div className="max-w-40 text-sm leading-5 text-white/52">
+                {section.metricLabel}
+              </div>
             </div>
           ) : null}
         </div>
@@ -103,12 +123,16 @@ function Hero({ section }: { section: HeroSection }) {
 
 function LogoStrip({ section }: { section: LogoStripSection }) {
   return (
-    <SectionShell className="py-10">
-      <div className="mx-auto max-w-7xl border-y border-white/10 py-8">
-        {section.title ? <p className="mb-5 text-sm text-white/50">{section.title}</p> : null}
-        <div className="grid grid-cols-2 gap-4 text-sm font-medium text-white/64 sm:grid-cols-5">
+    <SectionShell className="py-8">
+      <div className="mx-auto grid max-w-7xl gap-6 border-y border-white/10 py-7 md:grid-cols-[0.65fr_1.35fr] md:items-center">
+        {section.title ? (
+          <p className="max-w-sm text-sm leading-6 text-white/48">
+            {section.title}
+          </p>
+        ) : null}
+        <div className="grid grid-cols-2 gap-x-8 gap-y-4 text-sm font-medium text-white/56 sm:grid-cols-5">
           {section.logos.map((logo) => (
-            <div key={logo} className="rounded-md border border-white/10 bg-white/[0.03] px-4 py-3 text-center">
+            <div key={logo} className="text-left md:text-center">
               {logo}
             </div>
           ))}
@@ -120,18 +144,31 @@ function LogoStrip({ section }: { section: LogoStripSection }) {
 
 function FeatureGrid({ section }: { section: FeatureGridSection }) {
   return (
-    <SectionShell>
+    <SectionShell className="bg-[#080907]">
       <div className="mx-auto max-w-7xl">
-        <SectionIntro eyebrow={section.eyebrow} title={section.title} body={section.body} />
-        <div className="mt-12 grid gap-4 md:grid-cols-3">
-          {section.features.map((feature) => (
-            <Card key={feature.title} className="rounded-lg border-white/10 bg-white/[0.04]">
-              <CardContent className="p-6">
-                {feature.stat ? <div className="mb-7 font-mono text-2xl text-cyan-200">{feature.stat}</div> : null}
-                <h3 className="text-xl font-semibold text-white">{feature.title}</h3>
-                <p className="mt-3 leading-7 text-white/60">{feature.body}</p>
-              </CardContent>
-            </Card>
+        <SectionIntro
+          eyebrow={section.eyebrow}
+          title={section.title}
+          body={section.body}
+        />
+        <div className="mt-14 grid gap-px overflow-hidden rounded-lg border border-white/10 bg-white/10 md:grid-cols-3">
+          {section.features.map((feature, index) => (
+            <div key={feature.title} className="bg-[#080907] p-6 sm:p-8">
+              <div className="flex items-start justify-between gap-5">
+                <span className="font-mono text-xs text-white/34">
+                  0{index + 1}
+                </span>
+                {feature.stat ? (
+                  <span className="font-mono text-sm text-cyan-200">
+                    {feature.stat}
+                  </span>
+                ) : null}
+              </div>
+              <h3 className="mt-16 text-2xl font-semibold leading-tight text-white">
+                {feature.title}
+              </h3>
+              <p className="mt-4 leading-7 text-white/58">{feature.body}</p>
+            </div>
           ))}
         </div>
       </div>
@@ -141,19 +178,32 @@ function FeatureGrid({ section }: { section: FeatureGridSection }) {
 
 function SplitVisual({ section }: { section: SplitVisualSection }) {
   return (
-    <SectionShell className="bg-white/[0.03]">
+    <SectionShell>
       <div
-        className={`mx-auto grid max-w-7xl items-center gap-10 lg:grid-cols-2 ${
+        className={`mx-auto grid max-w-7xl items-center gap-12 lg:grid-cols-[0.9fr_1.1fr] ${
           section.reverse ? "lg:[&>*:first-child]:order-2" : ""
         }`}
       >
         <div>
-          <SectionIntro eyebrow={section.eyebrow} title={section.title} body={section.body} />
+          {section.eyebrow ? (
+            <p className="mb-4 text-xs font-medium uppercase tracking-[0.22em] text-emerald-300/80">
+              {section.eyebrow}
+            </p>
+          ) : null}
+          <h2 className="max-w-xl text-balance text-4xl font-semibold tracking-normal text-white sm:text-5xl">
+            {section.title}
+          </h2>
+          <p className="mt-5 max-w-xl text-pretty text-lg leading-8 text-white/60">
+            {section.body}
+          </p>
           {section.bullets?.length ? (
-            <div className="mx-auto mt-8 max-w-xl space-y-3">
+            <div className="mt-9 max-w-xl divide-y divide-white/10 border-y border-white/10">
               {section.bullets.map((bullet) => (
-                <div key={bullet} className="flex gap-3 rounded-md border border-white/10 bg-black/30 p-4 text-white/72">
-                  <CheckCircle2 className="mt-0.5 size-5 shrink-0 text-emerald-300" aria-hidden="true" />
+                <div key={bullet} className="flex gap-3 py-4 text-white/72">
+                  <CheckCircle2
+                    className="mt-0.5 size-5 shrink-0 text-emerald-300"
+                    aria-hidden="true"
+                  />
                   <span>{bullet}</span>
                 </div>
               ))}
@@ -168,15 +218,20 @@ function SplitVisual({ section }: { section: SplitVisualSection }) {
 
 function Testimonials({ section }: { section: TestimonialsSection }) {
   return (
-    <SectionShell>
+    <SectionShell className="bg-[#080907]">
       <div className="mx-auto max-w-7xl">
         <SectionIntro title={section.title} />
         <div className="mt-12 grid gap-4 md:grid-cols-2">
           {section.quotes.map((quote) => (
-            <Card key={quote.name} className="rounded-lg border-white/10 bg-white/[0.04]">
-              <CardContent className="p-6">
-                <Quote className="size-6 text-rose-300" aria-hidden="true" />
-                <p className="mt-5 text-pretty text-xl leading-8 text-white">{quote.quote}</p>
+            <Card
+              key={quote.name}
+              className="rounded-lg border-white/10 bg-black/30"
+            >
+              <CardContent className="p-7 sm:p-8">
+                <Quote className="size-6 text-rose-300/90" aria-hidden="true" />
+                <p className="mt-7 text-pretty text-2xl leading-9 text-white">
+                  {quote.quote}
+                </p>
                 <p className="mt-7 font-medium text-white">{quote.name}</p>
                 <p className="mt-1 text-sm text-white/52">{quote.role}</p>
               </CardContent>
@@ -200,18 +255,23 @@ function Pricing({ section }: { section: PricingSection }) {
               className={`rounded-lg ${
                 plan.highlighted
                   ? "border-emerald-300/45 bg-emerald-300 text-black"
-                  : "border-white/10 bg-white/[0.04]"
+                  : "border-white/10 bg-white/[0.035]"
               }`}
             >
-              <CardContent className="p-6">
+              <CardContent className="p-7">
                 <h3 className="text-xl font-semibold">{plan.name}</h3>
                 <div className="mt-5 font-mono text-4xl">{plan.price}</div>
-                <p className={`mt-4 leading-7 ${plan.highlighted ? "text-black/70" : "text-white/60"}`}>
+                <p
+                  className={`mt-4 leading-7 ${plan.highlighted ? "text-black/70" : "text-white/60"}`}
+                >
                   {plan.description}
                 </p>
                 <div className="mt-6 space-y-3">
                   {plan.features.map((feature) => (
-                    <div key={feature} className="flex items-center gap-3 text-sm">
+                    <div
+                      key={feature}
+                      className="flex items-center gap-3 text-sm"
+                    >
                       <Check className="size-4" aria-hidden="true" />
                       <span>{feature}</span>
                     </div>
@@ -229,13 +289,18 @@ function Pricing({ section }: { section: PricingSection }) {
 function FAQ({ section }: { section: FaqSection }) {
   return (
     <SectionShell>
-      <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[0.8fr_1.2fr]">
-        <h2 className="text-balance text-3xl font-semibold text-white sm:text-4xl">{section.title}</h2>
-        <div className="space-y-4">
+      <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[0.75fr_1.25fr]">
+        <h2 className="text-balance text-4xl font-semibold text-white sm:text-5xl">
+          {section.title}
+        </h2>
+        <div className="divide-y divide-white/10 border-y border-white/10">
           {section.faqs.map((faq) => (
-            <div key={faq.question} className="rounded-lg border border-white/10 bg-white/[0.04] p-6">
+            <div
+              key={faq.question}
+              className="grid gap-3 py-7 md:grid-cols-[0.55fr_1fr] md:gap-8"
+            >
               <h3 className="font-semibold text-white">{faq.question}</h3>
-              <p className="mt-3 leading-7 text-white/62">{faq.answer}</p>
+              <p className="leading-7 text-white/62">{faq.answer}</p>
             </div>
           ))}
         </div>
@@ -247,11 +312,17 @@ function FAQ({ section }: { section: FaqSection }) {
 function CTA({ section }: { section: CtaSection }) {
   return (
     <SectionShell className="pb-24">
-      <div className="mx-auto max-w-5xl rounded-lg border border-white/10 bg-white/[0.05] p-8 sm:p-12">
-        <h2 className="text-balance text-3xl font-semibold text-white sm:text-5xl">{section.title}</h2>
-        <p className="mt-5 max-w-3xl text-lg leading-8 text-white/64">{section.body}</p>
-        <div className="mt-8">
-          <CtaButtons links={section.links} />
+      <div className="mx-auto grid max-w-7xl gap-8 border-t border-white/10 pt-12 md:grid-cols-[1.1fr_0.9fr] md:items-end">
+        <h2 className="max-w-3xl text-balance text-4xl font-semibold leading-tight text-white sm:text-6xl">
+          {section.title}
+        </h2>
+        <div>
+          <p className="max-w-xl text-lg leading-8 text-white/64">
+            {section.body}
+          </p>
+          <div className="mt-8">
+            <CtaButtons links={section.links} />
+          </div>
         </div>
       </div>
     </SectionShell>
@@ -285,7 +356,9 @@ export function PageSections({ page }: { page: MarketingPage }) {
   return (
     <>
       {page.sections.map((section, index) => (
-        <div key={section._key ?? `${section._type}-${index}`}>{renderSection(section)}</div>
+        <div key={section._key ?? `${section._type}-${index}`}>
+          {renderSection(section)}
+        </div>
       ))}
     </>
   );

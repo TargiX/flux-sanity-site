@@ -15,25 +15,33 @@ export const fallbackPages: MarketingPage[] = [
       {
         _type: "heroSection",
         eyebrow: "CMS-powered marketing system",
-        title: "Launch polished campaign pages without waiting on engineering.",
-        body: "Flux Graph turns complex product journeys into shared visual maps. This portfolio build shows how marketers can assemble high-converting pages from reusable Sanity sections while the frontend stays fast, typed, and SEO-ready.",
-        metricLabel: "Campaign pages shipped",
-        metricValue: "12x faster",
+        title: "Ship CMS pages that feel custom.",
+        body: "A portfolio-grade marketing system for Flux Graph: Sanity-authored pages, reusable sections, preview mode, and SEO that ships cleanly on Vercel.",
+        metricLabel: "reusable CMS sections",
+        metricValue: "8 blocks",
         links: [
-          { label: "View campaign", href: "/campaigns/ai-graph-editor", variant: "primary" },
-          { label: "Read case study", href: "/case-study", variant: "secondary" },
+          {
+            label: "View campaign",
+            href: "/campaigns/ai-graph-editor",
+            variant: "primary",
+          },
+          {
+            label: "Read case study",
+            href: "/case-study",
+            variant: "secondary",
+          },
         ],
       },
       {
         _type: "logoStripSection",
-        title: "Built for marketing, product, and growth teams",
+        title: "A compact stack for real marketing-site work.",
         logos: ["Vercel", "Sanity", "Next.js", "Shadcn", "TypeScript"],
       },
       {
         _type: "featureGridSection",
         eyebrow: "Reusable sections",
-        title: "A landing-page system, not a one-off homepage.",
-        body: "Every block is modeled in Sanity and rendered by typed Next.js components, so non-technical teams can create pages while engineers keep control over quality.",
+        title: "Editors compose the page. The frontend keeps the taste.",
+        body: "Each CMS block maps to a typed React section with fixed design rules, responsive behavior, metadata, and fallback content.",
         features: [
           {
             title: "Composable page builder",
@@ -55,8 +63,8 @@ export const fallbackPages: MarketingPage[] = [
       {
         _type: "splitVisualSection",
         eyebrow: "Product signal",
-        title: "Show the actual planning workspace in the first viewport.",
-        body: "The marketing page leads with an inspectable product interface: graph nodes, edge flows, campaign health, and collaboration signals instead of a generic SaaS illustration.",
+        title: "The product shows up before the pitch deck does.",
+        body: "The first viewport is built around a real interface metaphor: graph nodes, content blocks, draft status, and SEO readiness in one inspectable canvas.",
         bullets: [
           "Responsive product visual built in React and CSS",
           "Accessible content structure for screen readers",
@@ -65,7 +73,7 @@ export const fallbackPages: MarketingPage[] = [
       },
       {
         _type: "testimonialsSection",
-        title: "Messaging that marketing can update independently",
+        title: "A CMS workflow that still looks designed",
         quotes: [
           {
             quote:
@@ -88,21 +96,30 @@ export const fallbackPages: MarketingPage[] = [
           {
             name: "Launch",
             price: "$49",
-            description: "For solo teams validating a focused product narrative.",
+            description:
+              "For solo teams validating a focused product narrative.",
             features: ["CMS landing pages", "SEO metadata", "Preview workflow"],
           },
           {
             name: "Scale",
             price: "$149",
             description: "For teams creating repeatable campaign systems.",
-            features: ["Reusable sections", "Campaign templates", "Structured data"],
+            features: [
+              "Reusable sections",
+              "Campaign templates",
+              "Structured data",
+            ],
             highlighted: true,
           },
           {
             name: "Enterprise",
             price: "Custom",
             description: "For organizations with advanced governance needs.",
-            features: ["Editorial workflow", "Custom schemas", "Vercel deployment"],
+            features: [
+              "Editorial workflow",
+              "Custom schemas",
+              "Vercel deployment",
+            ],
           },
         ],
       },
@@ -129,11 +146,15 @@ export const fallbackPages: MarketingPage[] = [
       },
       {
         _type: "ctaSection",
-        title: "A portfolio case that maps directly to CMS marketing work.",
-        body: "This repo demonstrates the exact workflow recruiters ask for: polished frontend execution, headless CMS modeling, reusable landing pages, preview, SEO, and deploy readiness.",
+        title: "A portfolio case built for the exact CMS brief.",
+        body: "Polished frontend execution, Sanity modeling, reusable landing pages, preview, SEO, and Vercel deployment in one small repo.",
         links: [
           { label: "Open case study", href: "/case-study", variant: "primary" },
-          { label: "Try campaign page", href: "/campaigns/ai-graph-editor", variant: "secondary" },
+          {
+            label: "Try campaign page",
+            href: "/campaigns/ai-graph-editor",
+            variant: "secondary",
+          },
         ],
       },
     ],
@@ -152,12 +173,16 @@ export const fallbackPages: MarketingPage[] = [
       {
         _type: "heroSection",
         eyebrow: "Campaign page template",
-        title: "Turn a blank canvas into an AI-assisted product map.",
-        body: "This campaign page uses the same Sanity page model as the homepage, proving that a marketer can create targeted pages from reusable sections without code changes.",
+        title: "Turn a blank canvas into a product map.",
+        body: "The same Sanity page model powers targeted campaign pages, with per-page metadata and reusable sections.",
         metricLabel: "Time to first map",
         metricValue: "<2 min",
         links: [
-          { label: "Review CMS model", href: "/case-study", variant: "primary" },
+          {
+            label: "Review CMS model",
+            href: "/case-study",
+            variant: "primary",
+          },
           { label: "Back home", href: "/", variant: "ghost" },
         ],
       },
@@ -216,7 +241,13 @@ export const fallbackPages: MarketingPage[] = [
         _type: "ctaSection",
         title: "This is the recruiter-facing proof point.",
         body: "It is a real CMS architecture in a small, polished portfolio repo: exactly the headless marketing-site integration the role asks for.",
-        links: [{ label: "Read implementation notes", href: "/case-study", variant: "primary" }],
+        links: [
+          {
+            label: "Read implementation notes",
+            href: "/case-study",
+            variant: "primary",
+          },
+        ],
       },
     ],
   },
