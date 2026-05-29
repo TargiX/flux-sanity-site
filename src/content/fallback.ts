@@ -15,7 +15,8 @@ export const fallbackPages: MarketingPage[] = [
       {
         _type: "heroSection",
         eyebrow: "CMS-powered marketing system",
-        title: "Ship CMS pages that feel custom.",
+        title: "Ship CMS pages",
+        titleHighlight: "that feel custom.",
         body: "A portfolio-grade marketing system for Flux Graph: Sanity-authored pages, reusable sections, preview mode, and SEO that ships cleanly on Vercel.",
         metricLabel: "reusable CMS sections",
         metricValue: "8 blocks",
@@ -173,7 +174,8 @@ export const fallbackPages: MarketingPage[] = [
       {
         _type: "heroSection",
         eyebrow: "Campaign page template",
-        title: "Turn a blank canvas into a product map.",
+        title: "Turn a blank canvas",
+        titleHighlight: "into a product map.",
         body: "The same Sanity page model powers targeted campaign pages, with per-page metadata and reusable sections.",
         metricLabel: "Time to first map",
         metricValue: "<2 min",

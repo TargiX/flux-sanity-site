@@ -67,21 +67,28 @@ function CtaButtons({ links }: { links?: CtaLink[] }) {
   return (
     <div className="flex flex-wrap gap-3">
       {links.map((link) => {
-        const variant =
-          link.variant === "secondary" || link.variant === "ghost"
-            ? "outline"
-            : "default";
+        const isPrimary =
+          link.variant !== "secondary" && link.variant !== "ghost";
 
         return (
           <Button
             key={`${link.href}-${link.label}`}
             asChild
-            variant={variant}
-            className="rounded-md"
+            variant={isPrimary ? "default" : "outline"}
+            className={
+              isPrimary
+                ? "group h-11 rounded-lg border-transparent bg-emerald-300 px-5 text-[0.9rem] font-semibold text-black shadow-[0_0_0_1px_rgba(110,231,183,0.25)] hover:bg-emerald-200"
+                : "h-11 rounded-lg border-white/15 bg-white/[0.02] px-5 text-[0.9rem] font-medium text-white/90 hover:border-white/30 hover:bg-white/[0.06] hover:text-white"
+            }
           >
             <Link href={link.href}>
               {link.label}
-              <ArrowRight className="size-4" aria-hidden="true" />
+              {isPrimary ? (
+                <ArrowRight
+                  className="size-4 transition-transform group-hover:translate-x-0.5"
+                  aria-hidden="true"
+                />
+              ) : null}
             </Link>
           </Button>
         );
@@ -95,8 +102,20 @@ function Hero({ section }: { section: HeroSection }) {
     <section className="px-5 pb-16 pt-14 sm:px-6 lg:px-8 lg:pb-14 lg:pt-10">
       <div className="mx-auto grid max-w-7xl items-center gap-10 lg:min-h-[760px] lg:grid-cols-[0.72fr_1.28fr]">
         <div className="relative z-10">
-          <h1 className="max-w-[10ch] text-balance text-5xl font-semibold leading-[0.94] tracking-normal text-white sm:text-6xl lg:text-[5.75rem]">
+          {section.eyebrow ? (
+            <p className="mb-6 inline-flex items-center gap-2 rounded-full border border-emerald-300/25 bg-emerald-300/5 px-3.5 py-1.5 text-xs font-medium uppercase tracking-[0.18em] text-emerald-300/90">
+              <span className="size-1.5 rounded-full bg-emerald-300" aria-hidden="true" />
+              {section.eyebrow}
+            </p>
+          ) : null}
+          <h1 className="max-w-[12ch] text-balance text-5xl font-semibold leading-[0.94] tracking-normal text-white sm:text-6xl lg:text-[5.75rem]">
             {section.title}
+            {section.titleHighlight ? (
+              <>
+                {" "}
+                <span className="text-emerald-300">{section.titleHighlight}</span>
+              </>
+            ) : null}
           </h1>
           <p className="mt-6 max-w-xl text-pretty text-lg leading-8 text-white/62">
             {section.body}
@@ -225,15 +244,28 @@ function Testimonials({ section }: { section: TestimonialsSection }) {
           {section.quotes.map((quote) => (
             <Card
               key={quote.name}
-              className="rounded-lg border-white/10 bg-black/30"
+              className="group rounded-2xl border-white/10 bg-gradient-to-b from-white/[0.05] to-white/[0.01] transition-colors hover:border-emerald-300/30"
             >
               <CardContent className="p-7 sm:p-8">
-                <Quote className="size-6 text-rose-300/90" aria-hidden="true" />
+                <Quote
+                  className="size-6 text-emerald-300/80"
+                  aria-hidden="true"
+                />
                 <p className="mt-7 text-pretty text-2xl leading-9 text-white">
                   {quote.quote}
                 </p>
-                <p className="mt-7 font-medium text-white">{quote.name}</p>
-                <p className="mt-1 text-sm text-white/52">{quote.role}</p>
+                <div className="mt-7 flex items-center gap-3">
+                  <span
+                    className="grid size-9 shrink-0 place-items-center rounded-full border border-emerald-300/30 bg-emerald-300/10 text-sm font-semibold text-emerald-200"
+                    aria-hidden="true"
+                  >
+                    {quote.name.charAt(0)}
+                  </span>
+                  <div>
+                    <p className="font-medium text-white">{quote.name}</p>
+                    <p className="text-sm text-white/52">{quote.role}</p>
+                  </div>
+                </div>
               </CardContent>
             </Card>
           ))}

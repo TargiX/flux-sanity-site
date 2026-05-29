@@ -25,7 +25,12 @@ export function SiteHeader() {
             </Link>
           ))}
         </nav>
-        <Button asChild size="sm" className="rounded-md">
+        <Button
+          asChild
+          size="sm"
+          variant="outline"
+          className="h-9 rounded-lg border-emerald-300/30 bg-emerald-300/5 px-3.5 text-emerald-200 hover:border-emerald-300/50 hover:bg-emerald-300/10 hover:text-emerald-100"
+        >
           <Link href="/case-study">
             <Layers3 className="size-4" aria-hidden="true" />
             CMS proof

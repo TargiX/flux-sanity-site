@@ -50,6 +50,12 @@ export const heroSection = defineType({
   fields: [
     defineField({ name: "eyebrow", title: "Eyebrow", type: "string" }),
     defineField({ name: "title", title: "Title", type: "string", validation: (rule) => rule.required() }),
+    defineField({
+      name: "titleHighlight",
+      title: "Title highlight",
+      description: "Optional second line of the headline, rendered in the brand accent color.",
+      type: "string",
+    }),
     defineField({ name: "body", title: "Body", type: "text", rows: 4, validation: (rule) => rule.required() }),
     defineField({ name: "metricLabel", title: "Metric label", type: "string" }),
     defineField({ name: "metricValue", title: "Metric value", type: "string" }),

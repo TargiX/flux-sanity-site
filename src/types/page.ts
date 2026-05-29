@@ -26,6 +26,7 @@ export type HeroSection = {
   _key?: string;
   eyebrow?: string;
   title: string;
+  titleHighlight?: string;
   body: string;
   links?: CtaLink[];
   metricLabel?: string;
