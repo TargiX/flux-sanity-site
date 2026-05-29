@@ -100,7 +100,7 @@ function CtaButtons({ links }: { links?: CtaLink[] }) {
 function Hero({ section }: { section: HeroSection }) {
   return (
     <section className="px-5 pb-16 pt-14 sm:px-6 lg:px-8 lg:pb-14 lg:pt-10">
-      <div className="mx-auto grid max-w-7xl items-center gap-10 lg:min-h-[760px] lg:grid-cols-[0.72fr_1.28fr]">
+      <div className="mx-auto grid max-w-7xl items-center gap-12 lg:min-h-[620px] lg:grid-cols-[1fr_1.08fr]">
         <div className="relative z-10">
           {section.eyebrow ? (
             <p className="mb-6 inline-flex items-center gap-2 rounded-full border border-emerald-300/25 bg-emerald-300/5 px-3.5 py-1.5 text-xs font-medium uppercase tracking-[0.18em] text-emerald-300/90">
@@ -108,13 +108,12 @@ function Hero({ section }: { section: HeroSection }) {
               {section.eyebrow}
             </p>
           ) : null}
-          <h1 className="max-w-[12ch] text-balance text-5xl font-semibold leading-[0.94] tracking-normal text-white sm:text-6xl lg:text-[5.75rem]">
+          <h1 className="text-balance text-4xl font-semibold leading-[1.04] tracking-tight text-white sm:text-5xl lg:text-6xl">
             {section.title}
             {section.titleHighlight ? (
-              <>
-                {" "}
-                <span className="text-emerald-300">{section.titleHighlight}</span>
-              </>
+              <span className="block text-emerald-300">
+                {section.titleHighlight}
+              </span>
             ) : null}
           </h1>
           <p className="mt-6 max-w-xl text-pretty text-lg leading-8 text-white/62">
@@ -123,7 +122,7 @@ function Hero({ section }: { section: HeroSection }) {
           <div className="mt-9">
             <CtaButtons links={section.links} />
           </div>
-          {section.metricValue ? (
+          {!section.metrics?.length && section.metricValue ? (
             <div className="mt-12 flex max-w-md items-center gap-5 border-l border-emerald-300/55 pl-5">
               <div className="font-mono text-3xl tracking-normal text-emerald-300 sm:text-4xl">
                 {section.metricValue}
@@ -136,6 +135,22 @@ function Hero({ section }: { section: HeroSection }) {
         </div>
         <ProductVisual />
       </div>
+      {section.metrics?.length ? (
+        <div className="mx-auto mt-14 max-w-7xl border-t border-white/10 pt-10">
+          <dl className="grid grid-cols-2 gap-x-8 gap-y-9 sm:grid-cols-4 sm:divide-x sm:divide-white/10">
+            {section.metrics.map((metric) => (
+              <div key={metric.label} className="sm:px-6 sm:first:pl-0">
+                <dt className="font-mono text-3xl tracking-tight text-emerald-300 sm:text-4xl">
+                  {metric.value}
+                </dt>
+                <dd className="mt-2 max-w-[22ch] text-sm leading-6 text-white/55">
+                  {metric.label}
+                </dd>
+              </div>
+            ))}
+          </dl>
+        </div>
+      ) : null}
     </section>
   );
 }

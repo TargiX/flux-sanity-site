@@ -59,6 +59,23 @@ export const heroSection = defineType({
     defineField({ name: "body", title: "Body", type: "text", rows: 4, validation: (rule) => rule.required() }),
     defineField({ name: "metricLabel", title: "Metric label", type: "string" }),
     defineField({ name: "metricValue", title: "Metric value", type: "string" }),
+    defineField({
+      name: "metrics",
+      title: "Metrics strip",
+      description: "Optional row of stats shown below the hero. Overrides the single metric when set.",
+      type: "array",
+      of: [
+        defineField({
+          name: "metric",
+          title: "Metric",
+          type: "object",
+          fields: [
+            defineField({ name: "value", title: "Value", type: "string", validation: (rule) => rule.required() }),
+            defineField({ name: "label", title: "Label", type: "string", validation: (rule) => rule.required() }),
+          ],
+        }),
+      ],
+    }),
     defineField({ name: "links", title: "Links", type: "array", of: [{ type: "ctaLink" }] }),
   ],
 });

@@ -18,8 +18,12 @@ export const fallbackPages: MarketingPage[] = [
         title: "Ship CMS pages",
         titleHighlight: "that feel custom.",
         body: "A portfolio-grade marketing system for Flux Graph: Sanity-authored pages, reusable sections, preview mode, and SEO that ships cleanly on Vercel.",
-        metricLabel: "reusable CMS sections",
-        metricValue: "8 blocks",
+        metrics: [
+          { value: "8", label: "reusable CMS section types" },
+          { value: "100%", label: "typed sections, end to end" },
+          { value: "<1s", label: "static-rendered page loads" },
+          { value: "SEO", label: "metadata, sitemap, JSON-LD built in" },
+        ],
         links: [
           {
             label: "View campaign",

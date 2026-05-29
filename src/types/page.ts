@@ -31,6 +31,10 @@ export type HeroSection = {
   links?: CtaLink[];
   metricLabel?: string;
   metricValue?: string;
+  metrics?: Array<{
+    value: string;
+    label: string;
+  }>;
 };
 
 export type LogoStripSection = {
