@@ -2,6 +2,7 @@ import Link from "next/link";
 import { ArrowRight, Check, CheckCircle2, Quote } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
+import { HeroGraphBadge } from "@/components/hero-graph-badge";
 import { ProductVisual } from "@/components/product-visual";
 import type {
   CtaLink,
@@ -108,10 +109,9 @@ function Hero({ section }: { section: HeroSection }) {
       <div className="mx-auto grid max-w-7xl items-center gap-12 lg:min-h-[620px] lg:grid-cols-[1fr_1.08fr]">
         <div className="relative z-10">
           {section.eyebrow ? (
-            <p className="mb-6 inline-flex items-center gap-2 rounded-full border border-emerald-300/25 bg-emerald-300/5 px-3.5 py-1.5 text-xs font-medium uppercase tracking-[0.18em] text-emerald-300/90">
-              <span className="size-1.5 rounded-full bg-emerald-300" aria-hidden="true" />
-              {section.eyebrow}
-            </p>
+            <div className="mb-6">
+              <HeroGraphBadge label={section.eyebrow} />
+            </div>
           ) : null}
           <h1 className="text-balance text-4xl font-semibold leading-[1.04] tracking-tight text-white sm:text-5xl lg:text-6xl">
             {section.title}

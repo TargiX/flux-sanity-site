@@ -10,6 +10,7 @@ import {
 } from "lucide-react";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
+import { HeroGraphBadge } from "@/components/hero-graph-badge";
 import { ProductVisual } from "@/components/product-visual";
 import { Button } from "@/components/ui/button";
 
@@ -59,10 +60,9 @@ export default function CaseStudyPage() {
       <section className="px-5 pb-16 pt-14 sm:px-6 lg:px-8 lg:pb-20 lg:pt-16">
         <div className="mx-auto grid max-w-7xl items-center gap-12 lg:grid-cols-[1fr_1.08fr]">
           <div>
-            <p className="mb-6 inline-flex items-center gap-2 rounded-full border border-emerald-300/25 bg-emerald-300/5 px-3.5 py-1.5 text-xs font-medium uppercase tracking-[0.18em] text-emerald-300/90">
-              <span className="size-1.5 rounded-full bg-emerald-300" aria-hidden="true" />
-              How it works
-            </p>
+            <div className="mb-6">
+              <HeroGraphBadge label="How it works" />
+            </div>
             <h1 className="text-balance text-4xl font-semibold leading-[1.04] tracking-tight text-white sm:text-5xl lg:text-6xl">
               One map for the
               <span className="block text-emerald-300">whole plan.</span>
