@@ -20,12 +20,17 @@ import type {
 function SectionShell({
   children,
   className = "",
+  id,
 }: {
   children: React.ReactNode;
   className?: string;
+  id?: string;
 }) {
   return (
-    <section className={`px-5 py-24 sm:px-6 lg:px-8 ${className}`}>
+    <section
+      id={id}
+      className={`scroll-mt-24 px-5 py-24 sm:px-6 lg:px-8 ${className}`}
+    >
       {children}
     </section>
   );
@@ -292,7 +297,7 @@ function Testimonials({ section }: { section: TestimonialsSection }) {
 
 function Pricing({ section }: { section: PricingSection }) {
   return (
-    <SectionShell className="bg-black">
+    <SectionShell id="pricing" className="bg-black">
       <div className="mx-auto max-w-7xl">
         <SectionIntro title={section.title} />
         <div className="mt-12 grid gap-4 lg:grid-cols-3">

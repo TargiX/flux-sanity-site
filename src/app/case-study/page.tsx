@@ -3,10 +3,10 @@ import Link from "next/link";
 import {
   ArrowRight,
   CheckCircle2,
-  Database,
-  Eye,
-  Rocket,
-  Search,
+  GitBranch,
+  Share2,
+  Sparkles,
+  Users,
 } from "lucide-react";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
@@ -14,9 +14,9 @@ import { ProductVisual } from "@/components/product-visual";
 import { Button } from "@/components/ui/button";
 
 export const metadata: Metadata = {
-  title: "CMS Marketing Site Builder Case Study",
+  title: "How Flux Graph works | Visual planning for teams",
   description:
-    "A portfolio case study showing a Next.js and Sanity marketing site builder with reusable landing sections, SEO, preview mode, and Vercel deployment.",
+    "See how Flux Graph turns rough ideas into a living plan: map dependencies, align every team, track what matters, and share a single source of truth.",
   alternates: {
     canonical: "/case-study",
   },
@@ -24,32 +24,32 @@ export const metadata: Metadata = {
 
 const pillars = [
   {
-    icon: Database,
-    title: "Headless CMS model",
-    body: "Sanity owns page content, slugs, SEO, and an ordered array of reusable sections.",
+    icon: GitBranch,
+    title: "Map the work",
+    body: "Lay out initiatives, owners, and deadlines as a graph and see how every piece connects.",
   },
   {
-    icon: Eye,
-    title: "Editor preview loop",
-    body: "Draft Mode and Visual Editing are wired so editors can review unpublished changes in context.",
+    icon: Users,
+    title: "Align the team",
+    body: "Product, content, and GTM plan on one real-time canvas instead of scattered docs and threads.",
   },
   {
-    icon: Search,
-    title: "Technical SEO",
-    body: "Metadata, canonical URLs, sitemap, robots, semantic sections, and JSON-LD ship with the renderer.",
+    icon: Sparkles,
+    title: "Surface what matters",
+    body: "Built-in signals flag blocked work and highlight the initiatives driving real outcomes.",
   },
   {
-    icon: Rocket,
-    title: "Deployable workflow",
-    body: "The site builds with fallback data locally and can be connected to Sanity/Vercel with environment variables.",
+    icon: Share2,
+    title: "Share with anyone",
+    body: "Send read-only views to execs and stakeholders so everyone sees the same plan, always current.",
   },
 ];
 
 const workflow = [
-  "A marketer creates a Sanity page document and chooses reusable sections.",
-  "The Next.js route fetches the page by slug using next-sanity.",
-  "If credentials or content are missing, typed fallback content keeps the build reviewable.",
-  "Published content updates the marketing page; Draft Mode enables unpublished preview.",
+  "Start from a template or describe your initiative and let the AI editor draft the first map.",
+  "Add owners, dependencies, and deadlines — the graph keeps everything connected as it grows.",
+  "Invite your team to refine the plan together in real time, with comments and live updates.",
+  "Share a read-only view with stakeholders and keep shipping as the plan evolves.",
 ];
 
 export default function CaseStudyPage() {
@@ -57,25 +57,40 @@ export default function CaseStudyPage() {
     <main>
       <SiteHeader />
       <section className="px-5 pb-16 pt-14 sm:px-6 lg:px-8 lg:pb-20 lg:pt-16">
-        <div className="mx-auto grid max-w-7xl items-center gap-10 lg:grid-cols-[0.72fr_1.28fr]">
+        <div className="mx-auto grid max-w-7xl items-center gap-12 lg:grid-cols-[1fr_1.08fr]">
           <div>
-            <h1 className="max-w-[10ch] text-balance text-5xl font-semibold leading-[0.94] tracking-normal text-white sm:text-6xl lg:text-[5.75rem]">
-              Proof this is a real CMS build.
+            <p className="mb-6 inline-flex items-center gap-2 rounded-full border border-emerald-300/25 bg-emerald-300/5 px-3.5 py-1.5 text-xs font-medium uppercase tracking-[0.18em] text-emerald-300/90">
+              <span className="size-1.5 rounded-full bg-emerald-300" aria-hidden="true" />
+              How it works
+            </p>
+            <h1 className="text-balance text-4xl font-semibold leading-[1.04] tracking-tight text-white sm:text-5xl lg:text-6xl">
+              One map for the
+              <span className="block text-emerald-300">whole plan.</span>
             </h1>
             <p className="mt-6 max-w-xl text-pretty text-lg leading-8 text-white/62">
-              Sanity schemas, reusable sections, draft preview, fallback
-              content, SEO, and Vercel deployment are wired into one
-              recruiter-facing portfolio repo.
+              Flux Graph brings tangled systems, content, and go-to-market work
+              into a single live view — so every team can see how the plan fits
+              together and where it&apos;s headed.
             </p>
             <div className="mt-9 flex flex-wrap gap-3">
-              <Button asChild className="rounded-md">
+              <Button
+                asChild
+                className="group h-11 rounded-lg border-transparent bg-emerald-300 px-5 text-[0.9rem] font-semibold text-black hover:bg-emerald-200"
+              >
                 <Link href="/campaigns/ai-graph-editor">
-                  Open campaign page
-                  <ArrowRight className="size-4" aria-hidden="true" />
+                  Start for free
+                  <ArrowRight
+                    className="size-4 transition-transform group-hover:translate-x-0.5"
+                    aria-hidden="true"
+                  />
                 </Link>
               </Button>
-              <Button asChild variant="outline" className="rounded-md">
-                <Link href="/studio">Open Studio</Link>
+              <Button
+                asChild
+                variant="outline"
+                className="h-11 rounded-lg border-white/15 bg-white/[0.02] px-5 text-[0.9rem] font-medium text-white/90 hover:border-white/30 hover:bg-white/[0.06] hover:text-white"
+              >
+                <Link href="/#pricing">View pricing</Link>
               </Button>
             </div>
           </div>
@@ -107,15 +122,15 @@ export default function CaseStudyPage() {
         <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[0.8fr_1.2fr]">
           <div>
             <p className="text-xs font-medium uppercase tracking-[0.22em] text-emerald-300/80">
-              Implementation
+              The workflow
             </p>
             <h2 className="mt-4 max-w-xl text-balance text-4xl font-semibold text-white sm:text-5xl">
-              What this proves to a recruiter
+              From first idea to shared plan
             </h2>
             <p className="mt-5 max-w-xl leading-8 text-white/64">
-              It is not a toy blog. The content model matches a practical
-              marketing workflow: create a page, choose sections, write SEO
-              metadata, preview drafts, and publish campaign URLs.
+              Flux Graph fits the way teams actually plan: sketch the work,
+              connect the dependencies, bring people in, and keep one source of
+              truth current as the initiative ships.
             </p>
           </div>
           <div className="divide-y divide-white/10 border-y border-white/10">
@@ -137,9 +152,13 @@ export default function CaseStudyPage() {
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({
             "@context": "https://schema.org",
-            "@type": "CreativeWork",
-            name: "CMS Marketing Site Builder Case Study",
-            about: ["Next.js", "Sanity CMS", "Technical SEO", "Vercel"],
+            "@type": "WebPage",
+            name: "How Flux Graph works",
+            about: [
+              "Visual planning",
+              "Team collaboration",
+              "Dependency mapping",
+            ],
           }),
         }}
       />

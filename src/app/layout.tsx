@@ -20,11 +20,11 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL(getSiteUrl()),
   title: {
-    default: "Flux Graph | CMS-powered visual planning",
+    default: "Flux Graph | Visual planning for systems, content, and GTM",
     template: "%s | Flux Graph",
   },
   description:
-    "A portfolio marketing site builder powered by Next.js, Sanity, reusable sections, draft preview, and technical SEO.",
+    "Flux Graph turns complex systems, content, and go-to-market work into a living map. See dependencies, align every team, and ship with clarity.",
 };
 
 export default async function RootLayout({

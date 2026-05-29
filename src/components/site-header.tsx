@@ -1,11 +1,11 @@
 import Link from "next/link";
-import { GitBranch, Layers3 } from "lucide-react";
+import { ArrowRight, GitBranch } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const navItems = [
-  { label: "Campaign", href: "/campaigns/ai-graph-editor" },
-  { label: "Case study", href: "/case-study" },
-  { label: "Studio", href: "/studio" },
+  { label: "Product", href: "/case-study" },
+  { label: "AI editor", href: "/campaigns/ai-graph-editor" },
+  { label: "Pricing", href: "/#pricing" },
 ];
 
 export function SiteHeader() {
@@ -28,12 +28,14 @@ export function SiteHeader() {
         <Button
           asChild
           size="sm"
-          variant="outline"
-          className="h-9 rounded-lg border-emerald-300/30 bg-emerald-300/5 px-3.5 text-emerald-200 hover:border-emerald-300/50 hover:bg-emerald-300/10 hover:text-emerald-100"
+          className="group h-9 rounded-lg border-transparent bg-emerald-300 px-4 font-semibold text-black hover:bg-emerald-200"
         >
-          <Link href="/case-study">
-            <Layers3 className="size-4" aria-hidden="true" />
-            CMS proof
+          <Link href="/campaigns/ai-graph-editor">
+            Get started
+            <ArrowRight
+              className="size-4 transition-transform group-hover:translate-x-0.5"
+              aria-hidden="true"
+            />
           </Link>
         </Button>
       </div>

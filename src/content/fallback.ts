@@ -6,32 +6,32 @@ export const fallbackPages: MarketingPage[] = [
     slug: "home",
     updatedAt: "2026-05-28T00:00:00.000Z",
     seo: {
-      title: "Flux Graph | CMS-powered visual planning",
+      title: "Flux Graph | Visual planning for systems, content, and GTM",
       description:
-        "A CMS-driven marketing site for a visual planning platform, built with Next.js, Sanity, reusable landing-page sections, preview mode, and technical SEO.",
+        "Flux Graph turns complex systems, content, and go-to-market work into a living map. See dependencies, align every team, and ship with clarity.",
       canonical: "/",
     },
     sections: [
       {
         _type: "heroSection",
-        eyebrow: "CMS-powered marketing system",
-        title: "Ship CMS pages",
-        titleHighlight: "that feel custom.",
-        body: "A portfolio-grade marketing system for Flux Graph: Sanity-authored pages, reusable sections, preview mode, and SEO that ships cleanly on Vercel.",
+        eyebrow: "Visual planning platform",
+        title: "Plan complex.",
+        titleHighlight: "Ship with clarity.",
+        body: "Flux Graph turns tangled systems, content, and go-to-market work into a living map. See how everything connects, align every team, and move faster together.",
         metrics: [
-          { value: "8", label: "reusable CMS section types" },
-          { value: "100%", label: "typed sections, end to end" },
-          { value: "<1s", label: "static-rendered page loads" },
-          { value: "SEO", label: "metadata, sitemap, JSON-LD built in" },
+          { value: "2.4×", label: "faster to align cross-functional plans" },
+          { value: "68%", label: "fewer status meetings chasing context" },
+          { value: "900+", label: "teams planning what matters most" },
+          { value: "SOC 2", label: "enterprise-grade security from day one" },
         ],
         links: [
           {
-            label: "View campaign",
+            label: "Start for free",
             href: "/campaigns/ai-graph-editor",
             variant: "primary",
           },
           {
-            label: "Read case study",
+            label: "See how it works",
             href: "/case-study",
             variant: "secondary",
           },
@@ -39,125 +39,128 @@ export const fallbackPages: MarketingPage[] = [
       },
       {
         _type: "logoStripSection",
-        title: "A compact stack for real marketing-site work.",
-        logos: ["Vercel", "Sanity", "Next.js", "Shadcn", "TypeScript"],
+        title: "Connects with the tools your team already works in.",
+        logos: ["Slack", "Linear", "Notion", "Figma", "GitHub"],
       },
       {
         _type: "featureGridSection",
-        eyebrow: "Reusable sections",
-        title: "Editors compose the page. The frontend keeps the taste.",
-        body: "Each CMS block maps to a typed React section with fixed design rules, responsive behavior, metadata, and fallback content.",
+        eyebrow: "Features",
+        title: "Everything you need to plan with confidence",
+        body: "From the first sketch to a shipped initiative, Flux Graph keeps the whole plan visible, connected, and up to date.",
         features: [
           {
-            title: "Composable page builder",
-            body: "Hero, feature grids, proof, pricing, FAQ, CTA, and visual product sections can be reordered per campaign.",
-            stat: "8 section types",
+            title: "Map dependencies visually",
+            body: "Drag work into a graph and see how initiatives, owners, and deadlines connect at a glance — no more buried docs.",
+            stat: "Live graph",
           },
           {
-            title: "Preview workflow",
-            body: "Draft Mode and Visual Editing are wired for editors to review unpublished changes in context.",
-            stat: "Live drafts",
+            title: "Align every team",
+            body: "Shared canvases keep product, content, and GTM working from a single source of truth, updated in real time.",
+            stat: "Real-time",
           },
           {
-            title: "Technical SEO",
-            body: "Metadata, canonical URLs, sitemap, robots, semantic structure, and JSON-LD are generated from page content.",
-            stat: "SEO-ready",
+            title: "Track what moves the needle",
+            body: "Built-in signals surface blocked work and highlight the initiatives actually driving outcomes.",
+            stat: "Insights",
           },
         ],
       },
       {
         _type: "splitVisualSection",
-        eyebrow: "Product signal",
-        title: "The product shows up before the pitch deck does.",
-        body: "The first viewport is built around a real interface metaphor: graph nodes, content blocks, draft status, and SEO readiness in one inspectable canvas.",
+        eyebrow: "Built for clarity",
+        title: "See the whole plan before it slips.",
+        body: "Flux Graph replaces scattered docs and status threads with one inspectable map, so dependencies, owners, and risk are obvious to everyone from day one.",
         bullets: [
-          "Responsive product visual built in React and CSS",
-          "Accessible content structure for screen readers",
-          "Designed to survive CMS copy length changes",
+          "Real-time canvas your whole team can edit together",
+          "Dependency and ownership tracking on every node",
+          "Shareable views for execs, teams, and stakeholders",
         ],
       },
       {
         _type: "testimonialsSection",
-        title: "A CMS workflow that still looks designed",
+        title: "Loved by teams who plan ahead",
         quotes: [
           {
             quote:
-              "We can spin up audience-specific pages without opening a ticket, while the frontend still feels custom-designed.",
+              "We replaced three status meetings a week with one shared map. Everyone finally sees the same plan.",
             name: "Maya Chen",
             role: "Head of Growth, Northstar Labs",
           },
           {
             quote:
-              "The CMS model mirrors the way our campaigns are planned: page, sections, proof, and SEO all in one place.",
+              "Flux Graph is the first tool where our product, content, and GTM plans actually live in one place.",
             name: "Julian Reyes",
-            role: "Product Marketing Lead",
+            role: "Director of Product Marketing",
           },
         ],
       },
       {
         _type: "pricingSection",
-        title: "Campaign-ready packaging",
+        title: "Pricing that scales with your team",
         plans: [
           {
             name: "Launch",
             price: "$49",
-            description:
-              "For solo teams validating a focused product narrative.",
-            features: ["CMS landing pages", "SEO metadata", "Preview workflow"],
+            description: "For small teams mapping their first initiatives.",
+            features: [
+              "Unlimited maps",
+              "Up to 10 collaborators",
+              "Core integrations",
+            ],
           },
           {
             name: "Scale",
             price: "$149",
-            description: "For teams creating repeatable campaign systems.",
+            description: "For growing teams running many plans at once.",
             features: [
-              "Reusable sections",
-              "Campaign templates",
-              "Structured data",
+              "Everything in Launch",
+              "Unlimited collaborators",
+              "Advanced views & insights",
             ],
             highlighted: true,
           },
           {
             name: "Enterprise",
             price: "Custom",
-            description: "For organizations with advanced governance needs.",
-            features: [
-              "Editorial workflow",
-              "Custom schemas",
-              "Vercel deployment",
-            ],
+            description: "For organizations with security and governance needs.",
+            features: ["SSO & SCIM", "Audit logs", "Dedicated support"],
           },
         ],
       },
       {
         _type: "faqSection",
-        title: "CMS integration details",
+        title: "Frequently asked questions",
         faqs: [
           {
-            question: "Can the site build without Sanity credentials?",
+            question: "How long does it take to get started?",
             answer:
-              "Yes. The data layer falls back to typed seed content when environment variables are missing, so previews, builds, and portfolio review remain reliable.",
+              "Most teams have their first map live in under five minutes. Start from a template or import an existing plan and invite your team.",
           },
           {
-            question: "Can marketers create new pages?",
+            question: "Can the whole team collaborate at once?",
             answer:
-              "Yes. Campaign pages are Sanity documents with a slug, SEO fields, and an ordered array of reusable sections.",
+              "Yes. Canvases update in real time, so everyone edits, comments, and reviews the same plan together without version conflicts.",
           },
           {
-            question: "Is draft preview included?",
+            question: "Is my data secure?",
             answer:
-              "Yes. The repo includes the Draft Mode enable route and Visual Editing wiring for a real Sanity project.",
+              "Flux Graph is SOC 2 Type II compliant, with SSO, granular permissions, and audit logging available on enterprise plans.",
           },
         ],
       },
       {
         _type: "ctaSection",
-        title: "A portfolio case built for the exact CMS brief.",
-        body: "Polished frontend execution, Sanity modeling, reusable landing pages, preview, SEO, and Vercel deployment in one small repo.",
+        title: "Bring your next plan into focus.",
+        body: "Start mapping in minutes. Invite your team, connect your tools, and watch the plan come together in one shared view.",
         links: [
-          { label: "Open case study", href: "/case-study", variant: "primary" },
           {
-            label: "Try campaign page",
+            label: "Start for free",
             href: "/campaigns/ai-graph-editor",
+            variant: "primary",
+          },
+          {
+            label: "Talk to sales",
+            href: "/case-study",
             variant: "secondary",
           },
         ],
@@ -165,91 +168,91 @@ export const fallbackPages: MarketingPage[] = [
     ],
   },
   {
-    title: "AI Graph Editor Campaign",
+    title: "AI Graph Editor",
     slug: "ai-graph-editor",
     updatedAt: "2026-05-28T00:00:00.000Z",
     seo: {
-      title: "AI Graph Editor Campaign",
+      title: "Flux Graph AI Graph Editor | From notes to a clear plan",
       description:
-        "A CMS-authored campaign page for Flux Graph's AI graph editor, showing reusable marketing sections and technical SEO.",
+        "Describe what you're shipping and let Flux Graph's AI draft the first plan — nodes, owners, and dependencies — ready for your team to refine.",
       canonical: "/campaigns/ai-graph-editor",
     },
     sections: [
       {
         _type: "heroSection",
-        eyebrow: "Campaign page template",
-        title: "Turn a blank canvas",
-        titleHighlight: "into a product map.",
-        body: "The same Sanity page model powers targeted campaign pages, with per-page metadata and reusable sections.",
-        metricLabel: "Time to first map",
+        eyebrow: "New · AI graph editor",
+        title: "From rough notes",
+        titleHighlight: "to a clear plan.",
+        body: "Describe what you're shipping in plain language. Flux Graph's AI drafts the first map — nodes, owners, and dependencies — ready for your team to refine.",
+        metricLabel: "from prompt to first map",
         metricValue: "<2 min",
         links: [
           {
-            label: "Review CMS model",
+            label: "Try the AI editor",
             href: "/case-study",
             variant: "primary",
           },
-          { label: "Back home", href: "/", variant: "ghost" },
+          { label: "Back to home", href: "/", variant: "ghost" },
         ],
       },
       {
         _type: "featureGridSection",
-        eyebrow: "Audience-specific messaging",
-        title: "A dedicated narrative for AI-assisted planning.",
-        body: "The page can swap proof points, features, FAQs, and calls to action while using the same frontend renderer.",
+        eyebrow: "AI-assisted planning",
+        title: "Plan at the speed of thought.",
+        body: "Turn messy inputs into a structured plan in seconds, then keep editing with full control.",
         features: [
           {
             title: "Prompt to graph",
-            body: "Generate first-pass journey maps from rough product notes, then edit nodes directly.",
+            body: "Generate a first-pass plan from rough product notes, then edit every node directly.",
             stat: "AI-assisted",
           },
           {
-            title: "Variant testing",
-            body: "Publish campaign variants with different hero copy, proof, and CTA language.",
-            stat: "CMS-driven",
+            title: "Smart suggestions",
+            body: "Flux Graph proposes likely dependencies and owners as your plan grows.",
+            stat: "Adaptive",
           },
           {
-            title: "Search-friendly pages",
-            body: "Each campaign owns metadata, canonical URL, FAQ schema, and sitemap visibility.",
-            stat: "Indexed",
+            title: "Always editable",
+            body: "The AI gives you a starting point — you stay in control of the final map.",
+            stat: "Yours",
           },
         ],
       },
       {
         _type: "splitVisualSection",
         eyebrow: "Workflow",
-        title: "From draft to published page with a real editor loop.",
-        body: "Editors update copy in Sanity, preview the unpublished page in context, then publish without asking engineering to rebuild a bespoke route.",
+        title: "From blank canvas to shared plan in minutes.",
+        body: "Start with a prompt, refine the generated map with your team, and share a single source of truth — no setup required.",
         bullets: [
-          "Sanity document controls slug, SEO, and ordered sections",
-          "Next.js renderer maps CMS blocks to typed components",
-          "Fallback content keeps local builds reliable",
+          "Generate a starting map from plain-language notes",
+          "Refine nodes, owners, and dependencies in real time",
+          "Share read-only views with stakeholders instantly",
         ],
         reverse: true,
       },
       {
         _type: "faqSection",
-        title: "Campaign FAQ",
+        title: "About the AI editor",
         faqs: [
           {
-            question: "Can this become a template for more campaigns?",
+            question: "Does the AI replace my planning?",
             answer:
-              "Yes. The slug-based route renders any Sanity page document, so new campaigns only need content and section choices.",
+              "No. It drafts a first version so you can skip the blank canvas — you refine, reorganize, and own the final plan.",
           },
           {
-            question: "What happens if a section is incomplete?",
+            question: "What can I generate a map from?",
             answer:
-              "The renderer uses conservative defaults and skips unknown section types, keeping pages resilient during editing.",
+              "Paste rough notes, a brief, or a list of initiatives, and Flux Graph structures them into a connected, editable map.",
           },
         ],
       },
       {
         _type: "ctaSection",
-        title: "This is the recruiter-facing proof point.",
-        body: "It is a real CMS architecture in a small, polished portfolio repo: exactly the headless marketing-site integration the role asks for.",
+        title: "Start your first map with AI.",
+        body: "Turn a prompt into a working plan in minutes, then bring your team in to refine it together.",
         links: [
           {
-            label: "Read implementation notes",
+            label: "Try Flux Graph free",
             href: "/case-study",
             variant: "primary",
           },
