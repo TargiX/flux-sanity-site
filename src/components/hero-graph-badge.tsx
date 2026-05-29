@@ -153,7 +153,7 @@ export function HeroGraphBadge({ label }: { label?: string }) {
         <circle className="hgb-pulse" r={1.7} fill="#ecfdf5" opacity={0} />
       </svg>
       <span
-        className="relative block h-4 w-[58px] overflow-hidden text-xs font-medium uppercase tracking-[0.18em] text-emerald-200/90"
+        className="relative block h-4 w-[82px] overflow-hidden text-xs font-medium uppercase tracking-[0.16em] text-emerald-200/90"
         aria-hidden="true"
       >
         {WORDS.map((word) => (
