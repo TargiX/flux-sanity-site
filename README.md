@@ -1,5 +1,8 @@
 # Flux Sanity Site
 
+**Live demo:** [sanity.ilyamoskovkin.com](https://sanity.ilyamoskovkin.com)  
+**Source:** [github.com/TargiX/flux-sanity-site](https://github.com/TargiX/flux-sanity-site)
+
 A portfolio-grade marketing site builder for a fictional Flux Graph SaaS product.
 
 This repo demonstrates the workflow requested by front-end marketing-site roles: polished responsive implementation, headless CMS modeling, reusable landing-page sections, technical SEO, preview mode, and Vercel deployment.
