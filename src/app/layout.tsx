@@ -1,3 +1,4 @@
+import Script from "next/script";
 import type { Metadata } from "next";
 import { draftMode } from "next/headers";
 import { Geist, Geist_Mono } from "next/font/google";
@@ -43,6 +44,7 @@ export default async function RootLayout({
         {children}
         {isSanityConfigured ? <SanityLive /> : null}
         {isSanityConfigured && isEnabled ? <VisualEditing /> : null}
+        <Script src="/traffic.js" strategy="afterInteractive" />
       </body>
     </html>
   );
